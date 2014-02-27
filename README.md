@@ -79,7 +79,11 @@ Creates a sponsor capability to create new actors with and allows replacing part
 
 ### sponsor(behavior)
 
-Same as the core [TartJS Minimal](https://github.com/organix/tartjs#minimal) implementation. _See: [sponsor(behavior)](https://github.com/organix/tartjs#sponsorbehavior-1)_
+Similar to the core [TartJS Minimal](https://github.com/organix/tartjs#minimal) implementation (_See: [sponsor(behavior)](https://github.com/organix/tartjs#sponsorbehavior-1)_) with the following addition.
+
+When the `behavior` is invoked upon the receipt of a message, it's `this` will be additionally bound with:
+
+  * `this.config`: _Function_ `function (message) {}` Reference to the config that is sponsoring the executing `behavior` (in form of a capability that can be invoked to send the config a message).
 
 ### actor(message)
 
